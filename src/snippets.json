@@ -1,0 +1,40 @@
+{
+  "示例代码": {
+    "prefix": "template",
+    "body": [
+      "<template>",
+      "  <div class=\"main-content\">",
+      "    <search-head>",
+      "      ${1}",
+      "    </search-head>",
+      "  </div>",
+      "</template>\n",
+      "<script lang=\"ts\">",
+      "import {",
+      "  defineComponent, getCurrentInstance, onMounted, ref,",
+      "} from 'vue';",
+      "import AntIcon from '@/components/Icon';",
+      "import SearchHead from '@/components/SearchHead.vue';\n",
+      "export default defineComponent({",
+      "  components: { AntIcon, SearchHead },",
+      "  setup() {",
+      "    const { proxy } = getCurrentInstance() as any;",
+      "",
+      "    onMounted(() => {",
+      "      proxy.\\$axios.get('/', {})",
+      "        .then((result: any) => {",
+      "          console.log(result.data.data);",
+      "        });",
+      "    });",
+      "${2}",
+      "    return {",
+      "    };",
+      "  },",
+      "});",
+      "</script>\n",
+      "<style lang=\"less\" scoped>",
+      "</style>\n"
+    ],
+    "description": "vue代码补全"
+  }
+}
